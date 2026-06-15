@@ -10,6 +10,7 @@ export interface Story {
   Type: string
   ETA: string
   Status: string
+  Region?: string
 }
 
 interface StoryTableProps {
