@@ -1,7 +1,10 @@
 import { getPlanningData, getVideoData } from '@/lib/api'
 import { WeeklyReportClient } from './WeeklyReportClient'
+import { Metadata } from 'next'
 
-export const metadata = {
+export const dynamic = 'force-dynamic'
+
+export const metadata: Metadata = {
   title: 'Weekly Report | MedAI Mate',
 }
 

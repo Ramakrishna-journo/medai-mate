@@ -1,7 +1,10 @@
 import { getVideoData } from '@/lib/api'
 import { VideoTrackerClient } from './VideoTrackerClient'
+import { Metadata } from 'next'
 
-export const metadata = {
+export const dynamic = 'force-dynamic'
+
+export const metadata: Metadata = {
   title: 'Video Production Tracker | MedAI Mate',
 }
 

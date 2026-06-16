@@ -1,7 +1,10 @@
 import { getPlanningData } from '@/lib/api'
 import { PipelineClient } from './PipelineClient'
+import { Metadata } from 'next'
 
-export const metadata = {
+export const dynamic = 'force-dynamic'
+
+export const metadata: Metadata = {
   title: 'Planning Pipeline | MedAI Mate',
 }
 

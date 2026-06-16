@@ -2,6 +2,8 @@ import { getPlanningData, getVideoData } from '@/lib/api'
 import { Story } from '@/components/StoryTable'
 import { VideoStory } from '../video-production/VideoTrackerClient'
 
+export const dynamic = 'force-dynamic'
+
 export const metadata = {
   title: 'Story Matrix | MedAI Mate',
 }

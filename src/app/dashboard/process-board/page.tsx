@@ -1,6 +1,10 @@
 import { KanbanSquare } from 'lucide-react'
+import { Metadata } from 'next'
+import { Suspense } from 'react'
 
-export const metadata = {
+export const dynamic = 'force-dynamic'
+
+export const metadata: Metadata = {
   title: 'Process Board | MedAI Mate',
 }
 
