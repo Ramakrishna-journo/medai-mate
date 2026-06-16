@@ -1,6 +1,6 @@
 export async function fetchFromGoogleSheet(action: string) {
-  const url = process.env.NEXT_PUBLIC_GOOGLE_SCRIPT_URL
-  const apiKey = process.env.MEDAI_MATE_API_KEY
+  const url = process.env.NEXT_PUBLIC_GOOGLE_SCRIPT_URL || 'https://script.google.com/macros/s/AKfycbxDcwhhASlDKV94UVfGghm3hp6JLTfB6LIhmoceg8KcfFehn-AJXb6nydrrGpyiIEtS/exec'
+  const apiKey = process.env.MEDAI_MATE_API_KEY || 'medaimate-secret-api-key-2026'
   
   if (!url || !apiKey) {
     throw new Error('Missing Apps Script URL or API Key')
@@ -54,8 +54,8 @@ export async function getDashboardExtraData() {
  * Creates a new story by sending a POST request to Google Apps Script.
  */
 export async function createPlanningStory(storyData: any) {
-  const url = process.env.NEXT_PUBLIC_GOOGLE_SCRIPT_URL
-  const apiKey = process.env.MEDAI_MATE_API_KEY
+  const url = process.env.NEXT_PUBLIC_GOOGLE_SCRIPT_URL || 'https://script.google.com/macros/s/AKfycbxDcwhhASlDKV94UVfGghm3hp6JLTfB6LIhmoceg8KcfFehn-AJXb6nydrrGpyiIEtS/exec'
+  const apiKey = process.env.MEDAI_MATE_API_KEY || 'medaimate-secret-api-key-2026'
   
   if (!url || !apiKey) {
     throw new Error('Google Script URL or API Key is missing in environment variables')
