@@ -19,27 +19,12 @@ export function LoginForm() {
     setLoading(true)
     setError(null)
 
-    // Demo bypass
-    if (email === 'demo@medaimate.com' && password === 'password') {
-      setTimeout(() => {
-        router.push('/dashboard')
-        router.refresh()
-      }, 800)
-      return
-    }
-
-    const { error } = await supabase.auth.signInWithPassword({
-      email,
-      password,
-    })
-
-    if (error) {
-      setError(error.message)
-      setLoading(false)
-    } else {
+    // For the Vercel Demo, bypass authentication completely
+    // so recruiters can instantly access the dashboard without needing credentials.
+    setTimeout(() => {
       router.push('/dashboard')
       router.refresh()
-    }
+    }, 800)
   }
 
   return (
@@ -63,7 +48,7 @@ export function LoginForm() {
             onChange={(e) => setEmail(e.target.value)}
             required
             className="block w-full px-4 py-3.5 bg-white/80 border border-[#e5e5ea] rounded-2xl text-[#1d1d1f] placeholder-[#86868b] focus:outline-none focus:ring-4 focus:ring-[#0071e3]/10 focus:border-[#0071e3] transition-all text-[15px] font-light shadow-sm"
-            placeholder="Email Address (demo@medaimate.com)"
+            placeholder="Any Email Address"
           />
         </div>
 
@@ -74,7 +59,7 @@ export function LoginForm() {
             onChange={(e) => setPassword(e.target.value)}
             required
             className="block w-full px-4 py-3.5 bg-white/80 border border-[#e5e5ea] rounded-2xl text-[#1d1d1f] placeholder-[#86868b] focus:outline-none focus:ring-4 focus:ring-[#0071e3]/10 focus:border-[#0071e3] transition-all text-[15px] font-light shadow-sm"
-            placeholder="Password"
+            placeholder="Any Password"
           />
         </div>
 
